@@ -28,7 +28,8 @@ def play_game():
             print('Please number between 1 - 9')
             continue
 
-        check_game_over()
+        check_win()
+        check_tie()
 
         if current_player == "x":
             current_player = "o"
@@ -49,11 +50,6 @@ def display_board():
     print("+---+---+---+")
     print(f"| {board[6]} | {board[7]} | {board[8]} |")
     print("+---+---+---+")
-
-
-def check_game_over():
-    check_win()
-    check_tie()
 
 
 def check_win():
