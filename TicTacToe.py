@@ -14,7 +14,8 @@ def play_game():
 
         print(line)
 
-        move = input(f"Player {current_player}| Please enter your move number (1-9): ")
+        move = input(f"Player {current_player}| Please enter your move number /"
+                     f"(1-9): ")
         try:
             move_n = int(move)
             if (move_n >= 1) and (move_n <= 9):
@@ -40,7 +41,7 @@ def play_game():
         else:
             current_player = "x"
 
-    if winner == "x" or winner == "o":
+    if (winner == "x") or (winner == "o"):
         print(f"{winner} WON!")
     else:
         print("Game is tie!")
@@ -146,7 +147,8 @@ print("""{0: ^50} \nEach player can place one mark (or stone)
 per turn on the 3x3 grid. The WINNER is
 who succeeds in placing three of their
 marks in a: """.format("Game Rules"))
-print("* {0:<15}\n* {1:<15}\n* {2:<15}".format('horizontal', 'vertical or', 'diagonal row'))
+print("* {0:<15}\n* {1:<15}\n* {2:<15}".format('horizontal', 'vertical or',
+                                               'diagonal row'))
 print(line)
 print("{0:^50}".format("Let's start the game"))
 print('-' * 50)
