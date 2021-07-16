@@ -15,17 +15,21 @@ def play_game():
         print(line)
 
         move = input(f"Player {current_player}| Please enter your move number (1-9): ")
-        move_n = int(move)
-        if (move_n >= 1) and (move_n <= 9):
-            position = int(move_n) - 1
-            if space_free(position):
-                board[position] = current_player
-                display_board()
+        try:
+            move_n = int(move)
+            if (move_n >= 1) and (move_n <= 9):
+                position = int(move_n) - 1
+                if space_free(position):
+                    board[position] = current_player
+                    display_board()
+                else:
+                    print("Sorry, this space is occupied!")
+                    continue
             else:
-                print("Sorry, this space is occupied!")
+                print('Please number between 1 - 9')
                 continue
-        else:
-            print('Please number between 1 - 9')
+        except ValueError:
+            print("Enter the number! ")
             continue
 
         check_win()
